@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IncluiAí - Jacareí Acessível</title>
+    <title>Caminhos</title>
     <style>
         :root {
-            --primary-blue: #0044cc;
-            --secondary-blue: #002266;
-            --accent-yellow: #ffcc00;
-            --bg-light: #f8f9fa;
-            --text-dark: #333333;
-            --text-light: #ffffff;
-            --border-color: #e0e0e0;
+            --primary-blue: #183B5F;
+            --secondary-blue: #266948;
+            --accent-green: #266948;
+            --bg-light: #F4F2F0;
+            --text-dark: #263238;
+            --text-light: #FFFFFF;
+            --border-color: #DADFDB;
         }
+        
 
         * {
             margin: 0;
@@ -82,7 +83,7 @@
 
         /* --- HERO --- */
         .hero {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            background: var(--primary-blue);
             color: var(--text-light);
             padding: 80px 5%;
             text-align: center;
@@ -91,7 +92,6 @@
             align-items: center;
             gap: 20px;
         }
-
         .hero h1 { font-size: 3rem; max-width: 800px; line-height: 1.2; }
         .hero p { font-size: 1.2rem; max-width: 600px; opacity: 0.9; }
 
@@ -103,7 +103,7 @@
             color: #fff;
         }
         /* Apenas o botão do Google Play mantido conforme solicitado */
-        .btn-store.google { background-color: #3ddc84; color: #000; }
+        .btn-store.google {background-color: var(--secondary-blue);color: #FFFFFF;}
         .btn-store.google:hover { transform: translateY(-3px); }
 
         /* --- ESTRUTURA BASE DAS SEÇÕES --- */
@@ -264,13 +264,73 @@
             .section-title { font-size: 1.6rem; }
             .mockup-box { width: 140px; height: 280px; }
         }
+        /* Animação dos links do menu */
+        nav a {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition:
+                background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        /* Efeito ao passar o mouse */
+        nav a:hover {
+            background-color: var(--primary-blue);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(24, 59, 95, 0.18);
+        }
+
+        /* Destaque ao navegar usando o teclado */
+        nav a:focus-visible {
+            outline: 3px solid var(--accent-green);
+            outline-offset: 3px;
+        }
+        /* Animação dos cards da seção "Por que usar o Caminhos?" */
+        .info-card {
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+
+            border: 1px solid transparent;
+            border-radius: 12px;
+        }
+
+        /* Efeito ao passar o mouse */
+        .info-card:hover {
+            transform: translateY(-6px) scale(1.025);
+            box-shadow: 0 12px 25px rgba(24, 59, 95, 0.16);
+            border-color: var(--secondary-blue);
+        }
+
+        /* Destaque para navegação pelo teclado */
+        .info-card:focus-visible {
+            outline: 3px solid var(--secondary-blue);
+            outline-offset: 4px;
+        }
+
+        /* Respeita quem prefere movimento reduzido */
+        @media (prefers-reduced-motion: reduce) {
+            .info-card {
+                transition: none;
+            }
+
+            .info-card:hover {
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- CABEÇALHO COM MENU HAMBÚRGUER -->
     <header>
-        <a href="#" class="logo">IncluiAí</a>
+        <a href="#" class="logo">Caminhos</a>
         
         <button class="hamburger" aria-label="Abrir menu de navegação" onclick="toggleMenu()">
             ☰
@@ -289,13 +349,13 @@
         <h1>A acessibilidade da cidade na palma da sua mão.</h1>
         <p>Mapeie, avalie e descubra locais com acessibilidade em Jacareí. Junte-se a nós para construir uma cidade mais inclusiva para todos.</p>
         <div class="store-buttons">
-            <a href="#android" class="btn-store google">Disponível no Google Play</a>
+            <a href="#android" class="btn-store google">Disponível no Google Play (EM BREVE)</a>
         </div>
     </section>
 
     <!-- RECURSOS | COMO AJUDA | FERRAMENTAS -->
     <section id="o-app">
-        <h2 class="section-title">Por que usar o IncluiAí?</h2>
+        <h2 class="section-title">Por que usar o Caminhos?</h2>
         <div class="info-grid">
             <div class="info-card">
                 <h3>Recursos Principais</h3>
@@ -321,7 +381,7 @@
                     <div class="step-number">1</div>
                     <div>
                         <h3>Baixe o Aplicativo</h3>
-                        <p>Disponível gratuitamente para dispositivos Android (Google Play).</p>
+                        <p>Disponível gratuitamente para dispositivos Android (EM BREVE).</p>
                     </div>
                 </div>
                 <div class="step-item">
@@ -350,7 +410,7 @@
 
     <!-- AVALIAÇÕES | PARCEIROS | MÍDIA -->
     <section id="credibilidade">
-        <h2 class="section-title">Quem apoia e usa o IncluiAí</h2>
+        <h2 class="section-title">Quem apoia e usa o Caminhos</h2>
         <div class="social-proof-grid">
             
             <!-- Avaliações -->
@@ -402,7 +462,7 @@
         <div class="faq-container">
             <details>
                 <summary>O aplicativo é gratuito? <span>▼</span></summary>
-                <p>Sim! O IncluiAí é um projeto colaborativo totalmente gratuito para todos os usuários.</p>
+                <p>Sim! O Caminhos é um projeto colaborativo totalmente gratuito para todos os usuários.</p>
             </details>
             <details>
                 <summary>Como as informações do mapa são atualizadas? <span>▼</span></summary>
@@ -425,7 +485,7 @@
 
     <!-- RODAPÉ -->
     <footer>
-        <p>&copy; 2026 IncluiAí - Jacareí Acessível. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Caminhos. Todos os direitos reservados.</p>
         <p style="margin-top: 10px;">
             <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a> | <a href="#">Contato</a>
         </p>
